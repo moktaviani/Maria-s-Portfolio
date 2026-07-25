@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria's Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+</head>
+<body>
+
+<div class="sparkle-field" id="sparkleField"></div>
+
+<header class="nav">
+  <a href="#top" class="nav-logo">Maria<span>.</span></a>
+  <nav class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact" id="navContactBtn">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <h1 class="hero-title">Maria's Portfolio</h1>
+
+  <div class="hero-glyph">
+    <svg viewBox="0 0 200 200" width="100%" height="100%">
+      <defs>
+        <radialGradient id="glowGrad" cx="50%" cy="45%" r="60%">
+          <stop offset="0%" stop-color="#E8C468" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#E8C468" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="100" cy="100" r="90" fill="url(#glowGrad)"/>
+      <!-- dreamy floating crescent + sparkles as signature glyph -->
+      <path d="M100 40 a55 55 0 1 0 0.1 0 a42 42 0 1 1 -0.1 0" fill="#C1876F" opacity="0.9"/>
+      <g fill="#FBF6EE">
+        <path d="M148 55 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z"/>
+        <path d="M60 130 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z"/>
+      </g>
+    </svg>
+  </div>
+
+  <p class="hero-tagline">AI & Computer Vision Enthusiast <span class="dot">•</span> Software Developer <span class="dot">•</span> IoT <span class="dot">•</span> Cybersecurity Enthusiast</p>
+  <p class="hero-sub">Welcome to my little corner of the internet, where I share the things I've built, learned, and continue to explore.</p>
+
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#projects">View Projects ✦</a>
+    <a class="btn btn-ghost" id="sayHelloBtn" href="#contact">Say hello</a>
+  </div>
+
+  <div class="torn" style="position:absolute; left:0; right:0; bottom:-2px;">
+    <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
+      <path d="M0,40 L20,32 L45,48 L70,28 L100,44 L130,30 L160,50 L190,34 L220,46 L250,30 L280,48 L310,32 L340,44 L370,28 L400,46 L430,32 L460,48 L490,30 L520,44 L550,28 L580,48 L610,32 L640,46 L670,28 L700,44 L730,30 L760,48 L790,32 L820,44 L850,28 L880,48 L910,32 L940,46 L970,28 L1000,44 L1030,30 L1060,48 L1090,32 L1120,44 L1150,28 L1180,46 L1200,34 L1200,90 L0,90 Z" fill="#F7EEE1"/>
+    </svg>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-eyebrow">About</div>
+  <h2>I build things that <em>solve problems</em> and make them <em>beautiful</em>, blending technology and creativity. I love turning <em>ideas</em> into practical projects with <em>thoughtful design</em>.</h2>
+  <div class="skill-row">
+    <span class="skill-pill"><span class="tag-dot"></span>Artificial Intelligence</span>
+    <span class="skill-pill"><span class="tag-dot"></span>Software Development</span>
+    <span class="skill-pill"><span class="tag-dot"></span>Cybersecurity</span>
+    <span class="skill-pill"><span class="tag-dot"></span>Internet of Things</span>
+  </div>
+</section>
+
+<div class="cloud-divider">
+  <svg class="cloud" style="top:20px; left:2%; animation-delay:0s; opacity:.95;" viewBox="0 0 260 110" width="220" height="93">
+    <path d="M40 90 C40 60 70 45 95 55 C100 25 145 15 165 40 C190 25 225 40 220 65 C245 65 250 95 220 100 L55 100 C35 100 30 95 40 90Z" fill="#FBF6EE"/>
+  </svg>
+  <svg class="cloud" style="top:50px; left:30%; animation-delay:4s; opacity:.75;" viewBox="0 0 260 110" width="280" height="118">
+    <path d="M40 90 C40 60 70 45 95 55 C100 25 145 15 165 40 C190 25 225 40 220 65 C245 65 250 95 220 100 L55 100 C35 100 30 95 40 90Z" fill="#FBF6EE"/>
+  </svg>
+  <svg class="cloud" style="top:10px; left:60%; animation-delay:2s; opacity:.6;" viewBox="0 0 260 110" width="180" height="76">
+    <path d="M40 90 C40 60 70 45 95 55 C100 25 145 15 165 40 C190 25 225 40 220 65 C245 65 250 95 220 100 L55 100 C35 100 30 95 40 90Z" fill="#FBF6EE"/>
+  </svg>
+  <svg class="cloud" style="top:75px; left:78%; animation-delay:6s; opacity:.5;" viewBox="0 0 260 110" width="150" height="63">
+    <path d="M40 90 C40 60 70 45 95 55 C100 25 145 15 165 40 C190 25 225 40 220 65 C245 65 250 95 220 100 L55 100 C35 100 30 95 40 90Z" fill="#FBF6EE"/>
+  </svg>
+</div>
+
+<section class="projects" id="projects">
+  <div class="projects-inner">
+    <div class="projects-head">
+      <div class="section-eyebrow">My Projects</div>
+      <h2>Little things I've built</h2>
+      <p>Every project starts with a problem to solve and ends with something useful, beautiful, and fun to build..</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <a class="card-thumb thumb-1 card-thumb-link" href="Stockpile/stockpile.html" aria-label="Open Stockpile project page">
+          <img src="assets/stockpilebatok.png" alt="Stockpile Batok project thumbnail">
+          <svg class="float-sparkle" style="top:14px; left:16px; width:16px; height:16px;" viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z" fill="#fff" opacity=".8"/></svg>
+        </a>
+        <span class="card-tag">Artificial Intelligence</span>
+        <h3>Coconut Shell Stockpile Estimator</h3>
+        <p>A computer vision tool that estimates the volume (m³) and tonnage (ton) of a coconut shell stockpile.</p>
+        <a class="card-link" href="Stockpile/stockpile.html">View project <span class="arrow">→</span></a>
+      </div>
+
+      <div class="card">
+        <a class="card-thumb thumb-1 card-thumb-link" href="#" aria-label="Open Fatigue and Unsafe project page">
+          <img src="assets/fatigueunsafe.png" alt="Fatigue and Unsafe project thumbnail">
+          <svg class="float-sparkle" style="top:14px; left:16px; width:16px; height:16px;" viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z" fill="#fff" opacity=".8"/></svg>
+        </a>
+        <span class="card-tag">Artificial Intelligence</span>
+        <h3>Fatigue and Unsafe Activity Detection</h3>
+        <p>A real-time computer vision system that monitors a driver to detect signs of fatigue and unsafe activities (smoking, vaping, phone use) while driving.</p>
+        <a class="card-link" href="#">View project <span class="arrow">→</span></a>
+      </div>
+      
+      <!-- LANJUT LAGI INI NANTI SEK -->
+
+    </div>
+  </div>
+</section>
+
+<div class="footer-wrap" id="contact">
+  <div class="torn" style="transform: scaleY(-1); margin-bottom:-2px;">
+    <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
+      <path d="M0,40 L20,32 L45,48 L70,28 L100,44 L130,30 L160,50 L190,34 L220,46 L250,30 L280,48 L310,32 L340,44 L370,28 L400,46 L430,32 L460,48 L490,30 L520,44 L550,28 L580,48 L610,32 L640,46 L670,28 L700,44 L730,30 L760,48 L790,32 L820,44 L850,28 L880,48 L910,32 L940,46 L970,28 L1000,44 L1030,30 L1060,48 L1090,32 L1120,44 L1150,28 L1180,46 L1200,34 L1200,90 L0,90 Z" fill="#4A3728"/>
+    </svg>
+  </div>
+  <footer class="footer">
+    <h2>Let's build something <em>together</em></h2>
+    <p>Open to collaborations, internships, and projects.</p>
+    <div class="footer-links">
+      <a href="mailto:moktaviani1122@gmail.com">Email</a>
+      <a href="https://github.com/moktaviani">GitHub</a>
+      <a href="https://www.linkedin.com/in/mariaoktavianitkd">LinkedIn</a>
+      <a href="https://instagram.com/ini_lala_ya">Instagram</a>
+    </div>
+    <div class="footer-bottom">✦ Let's be friends ✦</div>
+  </footer>
+</div>
+
+<div class="hello-character" id="helloCharacter" aria-hidden="true">
+  <svg viewBox="0 0 130 150" width="100%" height="100%">
+    <path d="M65 15 l14 40 42 0 -34 26 13 42 -35 -26 -35 26 13 -42 -34 -26 42 0z" fill="#E8C468" stroke="#4A3728" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="55" cy="70" r="3.5" fill="#4A3728"/>
+    <circle cx="75" cy="70" r="3.5" fill="#4A3728"/>
+    <path d="M58 84 q7 6 14 0" stroke="#4A3728" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M35 78 q-18 6 -16 26" stroke="#4A3728" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <g class="wave-arm">
+      <path d="M95 78 q18 -6 18 -26" stroke="#4A3728" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="115" cy="52" r="6" fill="#E8C468"/>
+    </g>
+  </svg>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

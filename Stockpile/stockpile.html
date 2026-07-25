@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coconut Shell Stockpile Estimator — dela</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="sparkle-field" id="sparkleField"></div>
+<header class="nav">
+  <a href="../index.html#top" class="nav-logo">Maria<span>.</span></a>
+  <nav class="nav-links">
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <div class="project-page-inner">
+
+    <a class="project-back" href="../index.html">Back to portfolio</a>
+
+    <!-- ---------- hero ---------- -->
+    <section class="project-hero">
+      <div class="project-copy">
+        <div class="section-eyebrow">Project Detail</div>
+        <h1>Coconut Shell Stockpile<br>Volume &amp; Tonnage Estimator</h1>
+        <p class="project-lede">
+          A computer-vision tool that estimates the <strong>volume (m³)</strong> and <strong>tonnage (ton)</strong>
+          of a coconut shell stockpile from a single photo, a video, or a live webcam feed.
+        </p>
+        <p>
+          It runs a pretrained monocular depth estimation model (<strong>Depth Anything V2 — Metric Indoor Large</strong>)
+          to reconstruct a height map of the pile, then converts that height map into volume and tonnage
+          using simple camera geometry — no manual measuring tape required.
+        </p>
+
+        <div class="project-meta">
+          <span>Computer Vision</span>
+          <span>Depth Estimation</span>
+          <span>Python</span>
+          <span>PyTorch / Hugging Face</span>
+        </div>
+
+        <div class="project-links">
+          <a class="btn btn-primary" href="https://github.com/moktaviani/Coconut-Shell-Stockpile-Volume-and-Tonnage-Estimator" target="_blank" rel="noopener">View on GitHub ✦</a>
+          <a class="btn btn-ghost" href="../index.html#projects">More projects</a>
+        </div>
+      </div>
+
+      <div class="project-image">
+        <svg class="float-sparkle" viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z" fill="#fff" opacity=".85"/></svg>
+        <img src="PictStockpile/batokbesar.png" alt="Coconut shell stockpile — sample input image">
+      </div>
+    </section>
+
+    <div class="star-divider" aria-hidden="true">
+      <span></span><svg viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z"/></svg><span></span><svg viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z"/></svg><span></span>
+    </div>
+
+    <!-- ---------- how it works ---------- -->
+    <section class="project-section">
+      <div class="section-eyebrow">How It Works</div>
+      <h2>From a single photo to a tonnage estimate</h2>
+      <p>
+        The pipeline turns one 2D frame into a real-world measurement in five steps, chaining a depth
+        model with a bit of camera geometry.
+      </p>
+
+      <ol class="steps-list">
+        <li>
+          <span class="step-num">1</span>
+          <div class="step-body">
+            <h3>Depth estimation</h3>
+            <p>The input image or frame is passed through a pretrained depth model to produce a per-pixel depth map.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div class="step-body">
+            <h3>Region of interest (ROI)</h3>
+            <p>A configurable crop focuses on the stockpile area and ignores background or floor clutter.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div class="step-body">
+            <h3>Height reconstruction</h3>
+            <p>Using the camera's height and horizontal distance to the pile, each pixel's depth is converted into a real-world height above the ground.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <div class="step-body">
+            <h3>Volume &amp; tonnage</h3>
+            <p>Pixel heights are converted to real-world area using the camera's horizontal field of view, then summed into a volume estimate. Volume is multiplied by a configurable specific gravity to get tonnage.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">5</span>
+          <div class="step-body">
+            <h3>Visualization</h3>
+            <p>The tool saves a color-mapped depth image, an ROI overlay, and a height heatmap for inspection.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <div class="star-divider" aria-hidden="true">
+      <span></span><svg viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z"/></svg><span></span><svg viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z"/></svg><span></span>
+    </div>
+
+    <section class="project-section">
+      <div class="section-eyebrow">Sample Results</div>
+      <h2>Image mode output</h2>
+      <p>Each run saves a depth map, an ROI overlay, and a height heatmap to the <code>Output/</code> folder.</p>
+
+      <div class="result-gallery">
+        <figure>
+          <img src="PictStockpile/batokbesar_roi.png" alt="ROI overlay placeholder">
+          <figcaption>ROI overlay</figcaption>
+        </figure>
+        <figure>
+          <img src="PictStockpile/batokbesar_depthmap.png" alt="Depth map placeholder">
+          <figcaption>Depth map</figcaption>
+        </figure>
+        <figure>
+          <img src="PictStockpile/batokbesar_heightmap.png" alt="Height map placeholder">
+          <figcaption>Height map</figcaption>
+        </figure>
+      </div>
+
+      <div class="console-card">============================================================
+ COCONUT SHELL STOCKPILE ESTIMATION RESULTS
+============================================================
+ Camera-to-Base Distance : <span class="hl">2.83 m</span>
+ Camera Tilt Angle       : <span class="hl">45.0°</span>
+ Estimated Volume        : <span class="hl">2.43 m³</span>
+ Estimated Tonnage       : <span class="hl">1.12 ton</span>
+ Maximum Height          : <span class="hl">0.85 m</span>
+ Average Height          : <span class="hl">0.55 m</span>
+ Density Used            : <span class="hl">0.46 t/m³</span>
+============================================================</div>
+    </section>
+
+    <div class="star-divider" aria-hidden="true">
+      <span></span><svg viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z"/></svg><span></span><svg viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z"/></svg><span></span>
+    </div>
+
+    <!-- ---------- notes & limitations ---------- -->
+    <section class="project-section">
+      <div class="section-eyebrow">Notes &amp; Limitations</div>
+      <h2>Good to know</h2>
+      <ul class="note-list">
+        <li>Estimates are only as accurate as the camera geometry parameters — <code>camera_height_m</code>, <code>horizontal_distance_m</code>, and <code>camera_horizontal_fov_deg</code> should be measured carefully for the real setup.</li>
+        <li>The depth model is general-purpose and not fine-tuned specifically on coconut shell piles, so results are approximate and best used for relative or trend monitoring rather than precise auditing.</li>
+        <li>Video and webcam mode don't run inference on every frame — the interval is controlled by <code>--infer-interval</code>, since the depth model is computationally heavy.</li>
+      </ul>
+    </section>
+
+    <div class="star-divider" aria-hidden="true">
+      <span></span><svg viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z"/></svg><span></span><svg viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z"/></svg><span></span>
+    </div>
+
+    <div class="project-footer-nav">
+      <span class="signature">✦ Coconut Shell Stockpile Estimator, 2026</span>
+    </div>
+
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
