@@ -1,5 +1,3 @@
-// Scatter ambient sparkles across the page background — same motif as the
-// main portfolio page, so every project detail still feels like dela's world.
 document.addEventListener('DOMContentLoaded', () => {
   const field = document.getElementById('sparkleField');
   if (!field) return;
