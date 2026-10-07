@@ -39,18 +39,6 @@ character.addEventListener('animationend', (e) => {
 
 
 
-document.addEventListener('mousemove', (e) => {
-  const sparkle = document.createElement('div');
-  sparkle.className = 'wand-sparkle';
-  sparkle.style.left = e.clientX + 'px';
-  sparkle.style.top = e.clientY + 'px';
-  document.body.appendChild(sparkle);
-  setTimeout(() => sparkle.remove(), 600);
-});
-
-
-
-
 function createWandBurst(x, y){
   const starCount = 10;
   const colors = ['#E8C468', '#F2D98A', '#C1876F'];
