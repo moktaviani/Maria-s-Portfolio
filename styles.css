@@ -494,22 +494,6 @@ header.nav{
 /* TAMBAHIN CSS RESPONSIF */
 
 
-.wand-sparkle{
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  background: #E8C468;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  animation: sparkleFade .6s ease-out forwards;
-}
-@keyframes sparkleFade{
-  0%{ opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  100%{ opacity: 0; transform: translate(-50%, -50%) scale(0); }
-}
-
 
 .wand-burst-star{
   position: fixed;
