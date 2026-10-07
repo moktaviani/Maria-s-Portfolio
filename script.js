@@ -35,3 +35,50 @@ character.addEventListener('animationend', (e) => {
     character.classList.remove('pop');
   }
 });
+
+
+
+
+document.addEventListener('mousemove', (e) => {
+  const sparkle = document.createElement('div');
+  sparkle.className = 'wand-sparkle';
+  sparkle.style.left = e.clientX + 'px';
+  sparkle.style.top = e.clientY + 'px';
+  document.body.appendChild(sparkle);
+  setTimeout(() => sparkle.remove(), 600);
+});
+
+
+
+
+function createWandBurst(x, y){
+  const starCount = 10;
+  const colors = ['#E8C468', '#F2D98A', '#C1876F'];
+
+  for(let i = 0; i < starCount; i++){
+    const angle = (Math.PI * 2 * i) / starCount + (Math.random() * 0.4 - 0.2);
+    const distance = 60 + Math.random() * 50;
+    const endX = Math.cos(angle) * distance;
+    const endY = Math.sin(angle) * distance;
+    const size = 8 + Math.random() * 10;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    const star = document.createElement('div');
+    star.className = 'wand-burst-star';
+    star.style.setProperty('--start-x', x + 'px');
+    star.style.setProperty('--start-y', y + 'px');
+    star.style.setProperty('--end-x', (x + endX) + 'px');
+    star.style.setProperty('--end-y', (y + endY) + 'px');
+    star.style.width = size + 'px';
+    star.style.height = size + 'px';
+
+    star.innerHTML = `<svg viewBox="0 0 20 20"><path d="M10 0 l2.5 7.5 7.5 2.5 -7.5 2.5 -2.5 7.5 -2.5 -7.5 -7.5 -2.5 7.5 -2.5 z" fill="${color}"/></svg>`;
+
+    document.body.appendChild(star);
+    star.addEventListener('animationend', () => star.remove());
+  }
+}
+
+document.addEventListener('click', (e) => {
+  createWandBurst(e.clientX, e.clientY);
+});
